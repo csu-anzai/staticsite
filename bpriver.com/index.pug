@@ -7,14 +7,14 @@ html(b:version='2' class='v2' expr:dir='data:blog.languageDirection' expr:lang='
         <title><data:blog.pageTitle /></title>
         <b:skin><![CDATA[        body { font-size: 12px; }        ]]></b:skin>
         style
-            include index.css
+            include ../index.css
         <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:100,300,400,500,700,900" rel="stylesheet"/> 
         <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet"/>
         
     body(expr:class!='&quot;loading&quot; + data:blog.mobileClass')
-        include include-body/header.pug
-        include include-body/main.pug
-        include include-script/slice-date.pug
+        include header.pug
+        include main.pug
+        include ../_library-script/slice-date.pug
 
 
 
