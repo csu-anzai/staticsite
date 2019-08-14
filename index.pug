@@ -1,0 +1,24 @@
+doctype xml
+doctype html
+html(b:version='2' class='v2' expr:dir='data:blog.languageDirection' expr:lang='data:blog.locale' xmlns='http://www.w3.org/1999/xhtml'
+  xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr')
+    head
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title><data:blog.pageTitle /></title>
+        <b:skin><![CDATA[        body { font-size: 12px; }        ]]></b:skin>
+        style
+            include index.css
+        <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:100,300,400,500,700,900" rel="stylesheet"/> 
+        <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet"/>
+        
+    body(expr:class!='&quot;loading&quot; + data:blog.mobileClass')
+        include include-body/header.pug
+        include include-body/main.pug
+        include include-script/slice-date.pug
+
+
+
+
+	
+		
+        
