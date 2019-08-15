@@ -1,9 +1,46 @@
+color_background=#03a9f4
+color_text_link=#003AFF
+color_text_plane=white
+topmenu_label_margin=4em
+topmenu_list_margin=topmenu_label_margin/2
 
+//共通設定
 body
-    background-color: #03a9f4
-    color: white
+    background-color: color_background
+    color: color_text_plane
     //font-family: "M PLUS Rounded 1c","meiryo","メイリオ", sans-serif;
     font-family: 'Noto Sans JP',"meiryo","メイリオ", sans-serif;
     font-weight: 300
-    
-@import "_library-css/bp-style/bp-card"
+a
+    text-decoration: none
+    color color_text_link
+    &:hover
+        text-decoration underline
+svg
+    width 100%
+    height 100% //これがないと位置がおかしくなる
+
+//個別設定
+.breadcrumb
+    background-color: blue
+    a
+        display: inline-block
+        height 100px
+
+
+.topmenu
+    text-align: center
+    .label
+        margin topmenu_label_margin
+        font-size x-large
+    a
+        display: block
+        margin topmenu_list_margin
+
+
+
+
+
+
+
+//@import "_library-css/bp-style/bp-card"

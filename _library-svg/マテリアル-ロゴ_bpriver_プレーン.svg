@@ -1,43 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?><!DOCTYPE html><html class="v2" b:version="2" expr:dir="data:blog.languageDirection" expr:lang="data:blog.locale" xmlns="http://www.w3.org/1999/xhtml" xmlns:b="http://www.google.com/2005/gml/b" xmlns:data="http://www.google.com/2005/gml/data" xmlns:expr="http://www.google.com/2005/gml/expr"><head><meta name="viewport" content="width=device-width, initial-scale=1" />
-<title><data:blog.pageTitle /></title>
-<b:skin><![CDATA[        body {  }        ]]></b:skin>
-<link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:100,300,400,500,700,900" rel="stylesheet"/> 
-<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet"/><style>body {
-  background-color: #03a9f4;
-  color: #fff;
-  font-family: 'Noto Sans JP', "meiryo", "メイリオ", sans-serif;
-  font-weight: 300;
-}
-a {
-  text-decoration: none;
-  color: #003aff;
-}
-a:hover {
-  text-decoration: underline;
-}
-svg {
-  width: 100%;
-  height: 100%;
-}
-.breadcrumb {
-  background-color: #00f;
-}
-.breadcrumb a {
-  display: inline-block;
-  height: 100px;
-}
-.topmenu {
-  text-align: center;
-}
-.topmenu .label {
-  margin: 4em;
-  font-size: x-large;
-}
-.topmenu a {
-  display: block;
-  margin: 2em;
-}
-</style></head><body expr:class="&quot;loading&quot; + data:blog.mobileClass"><b:section class="header" id="header"><b:widget id="Header1" type="Header" expr:title="data:blog.title"><b:includable id="main"><b:include name='Breadcrumb'/></b:includable><b:includable id="Breadcrumb"><div class="breadcrumb"><a class="parent" expr:href="data:blog.homepageUrl"><!--svg画像のinkscape内での座標の位置、左上が0,0にくるように修正する--><svg
+<svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -140,23 +101,3 @@ svg {
     </g>
   </g>
 </svg>
-</a><a class="child" expr:href="data:blog.url"><data:blog.pageName/></a></div></b:includable></b:widget></b:section><b:section class="main" id="main" name="Main" showaddelement="no"><b:widget id="Blog1" locked="true" title="ブログの投稿" type="Blog"><!--item、static_pageはbloop必須--><b:includable id="main" var="top"><b:switch var="data:blog.pageType"><b:case value="index"/>
-    <b:include name='Menu'/>
-<b:case value="item"/>
-    <b:loop values='data:posts' var='post'>
-        <b:include name='Post' data='post'/>
-    </b:loop>
-<b:case value="static_page"/>
-    <b:loop values='data:posts' var='post'>
-        <b:include name='Post' data='post'/>
-    </b:loop>
-<b:default/>
-    <h1 class="title">工事中　もしくは　エラー</h1>
-</b:switch></b:includable><b:includable id="Post" var="obj"><data:obj.body/></b:includable><b:includable id="Menu" var="obj"><div class="topmenu"><div class="label">こんな活動をしています</div><a href="https://software-development-online-community.bpriver.com/">ソフトウェア開発オンラインコミュニティ</a><a href="https://software-development-online-community.bpriver.com/">ソフトウェア開発オンラインコミュニティ</a><a href="https://software-development-online-community.bpriver.com/">ソフトウェア開発オンラインコミュニティ</a></div></b:includable></b:widget></b:section><script type="text/javascript">//<![CDATA[
-    <!--
-        var cards = document.getElementsByClassName( "bp-card-date" ) ;
-        for(var i=0; i < cards.length; i++){
-            cards[i].textContent = cards[i].textContent.slice(0,10);
-        }
-    //-->
-//]]></script></body></html>

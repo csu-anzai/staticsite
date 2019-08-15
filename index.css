@@ -4,51 +4,32 @@ body {
   font-family: 'Noto Sans JP', "meiryo", "メイリオ", sans-serif;
   font-weight: 300;
 }
-a.bp-card {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  margin: 2vw;
+a {
   text-decoration: none;
+  color: #003aff;
 }
-a.bp-card:hover .bp-card-title {
+a:hover {
   text-decoration: underline;
 }
-a.bp-card .bp-card-text {
-  border: 0.1vh solid #fff;
-  border-radius: 5vh 0 0 5vh;
-  overflow-wrap: break-word;
-  padding-top: 3vh;
-  padding-bottom: 3vh;
-  padding-left: 4vw;
-  padding-right: 4vw;
-  font-size: 1.3em;
-}
-a.bp-card .bp-card-text .bp-card-title {
-  font-size: 1.4em;
-  color: #003aff;
-  line-height: 130%;
-  letter-spacing: 0.06em;
-  font-weight: 100;
-}
-a.bp-card .bp-card-text .bp-card-details {
-  margin-top: 1.5vh;
-  margin-left: 3vw;
-  color: #fff;
-  letter-spacing: 0.06em;
-}
-a.bp-card .bp-card-text .bp-card-icon {
-  color: #6fd1fd;
-  margin-top: 1vh;
-  margin-left: 3vw;
-}
-a.bp-card .bp-card-text .bp-card-date {
-  display: inline-block;
-  color: #96defe;
-  margin-top: 1vh;
-  margin-left: 0.3em;
-}
-a.bp-card .bp-card-img img {
+svg {
   width: 100%;
   height: 100%;
-  border-radius: 0 5vh 5vh 0;
+}
+.breadcrumb {
+  background-color: #00f;
+}
+.breadcrumb a {
+  display: inline-block;
+  height: 100px;
+}
+.topmenu {
+  text-align: center;
+}
+.topmenu .label {
+  margin: 4em;
+  font-size: x-large;
+}
+.topmenu a {
+  display: block;
+  margin: 2em;
 }
