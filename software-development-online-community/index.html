@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?><!DOCTYPE html><html class="v2" b:version="2" expr:dir="data:blog.languageDirection" expr:lang="data:blog.locale" xmlns="http://www.w3.org/1999/xhtml" xmlns:b="http://www.google.com/2005/gml/b" xmlns:data="http://www.google.com/2005/gml/data" xmlns:expr="http://www.google.com/2005/gml/expr"><head><meta name="viewport" content="width=device-width, initial-scale=1" />
 <title><data:blog.pageTitle /></title>
-<b:skin><![CDATA[        body { font-size: 12px; }        ]]></b:skin><style>body {
+<b:skin><![CDATA[        body { font-size: 12px; }        ]]></b:skin>
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:100,300,400,500,700,900" rel="stylesheet"/> 
+<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet"/><style>body {
   background-color: #03a9f4;
   color: #fff;
   font-family: 'Noto Sans JP', "meiryo", "メイリオ", sans-serif;
@@ -54,8 +56,7 @@ a.bp-card .bp-card-img img {
   height: 100%;
   border-radius: 0 5vh 5vh 0;
 }
-</style><link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:100,300,400,500,700,900" rel="stylesheet"/> 
-<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet"/></head><body expr:class="&quot;loading&quot; + data:blog.mobileClass"><b:section class="header" id="header"><b:widget id="Header1" type="Header" expr:title="data:blog.title"><b:includable id="main"><b:include name='Breadcrumb'/><!--//b:switch(var='data:blog.pageType')<b:case value="index"/>
+</style></head><body expr:class="&quot;loading&quot; + data:blog.mobileClass"><b:section class="header" id="header"><b:widget id="Header1" type="Header" expr:title="data:blog.title"><b:includable id="main"><b:include name='Breadcrumb'/><!--//b:switch(var='data:blog.pageType')<b:case value="index"/>
     <h1><data:title/></h1>
 <b:case value="item"/>
     <h1><data:title/></h1>
@@ -84,11 +85,4 @@ a.bp-card .bp-card-img img {
 </b:switch></b:includable><b:includable id="TopPost" var="post"><a href="https://arakawa.bpriver.com/p/test2.html">ページ</a>
 <a href="https://arakawa.bpriver.com/p/blog-page_14.html">ページ</a><a class="bp-card" expr:href="data:post.url"><div class="bp-card-text"><div class="bp-card-title"><data:post.title/></div><div class="bp-card-details"><data:post.snippet/></div><i class="fas fa-sync-alt bp-card-icon"></i><div class="bp-card-date"><data:post.lastUpdatedISO8601/></div></div><div class="bp-card-img"><img expr:alt='data:post.title' expr:src='data:post.firstImageUrl' expr:title='data:post.title'/>
 </div></a></b:includable><b:includable id="DetailPost" var="post"><div class="row" style="margin-top:30px;"><div class="col-12"><div><data:post.body/>
-</div></div></div></b:includable><b:includable id="StaticPage" var="post"><data:post.body/></b:includable></b:widget></b:section><script type="text/javascript">//<![CDATA[
-    <!--
-        var cards = document.getElementsByClassName( "bp-card-date" ) ;
-        for(var i=0; i < cards.length; i++){
-            cards[i].textContent = cards[i].textContent.slice(0,10);
-        }
-    //-->
-//]]></script></body></html>
+</div></div></div></b:includable><b:includable id="StaticPage" var="post"><data:post.body/></b:includable></b:widget></b:section></body></html>

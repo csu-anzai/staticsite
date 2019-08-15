@@ -1,0 +1,33 @@
+b:section#header.header
+    b:widget#Header1(type='Header' expr:title='data:blog.title')
+        b:includable#main
+            <b:include name='Breadcrumb'/>
+            
+            ////b:switch(var='data:blog.pageType')
+                <b:case value="index"/>
+                    <h1><data:title/></h1>
+                <b:case value="item"/>
+                    <h1><data:title/></h1>
+                    <h1><data:blog.pageName/></h1>
+                <b:case value="static_page"/>
+                    <h1><data:title/></h1>
+                    <h1><data:blog.pageName/></h1>
+                <b:default/>
+                    <h1>工事中　もしくは　エラー</h1>
+        
+        b:includable#Breadcrumb
+            .breadcrumb
+                a(expr:href='data:blog.homepageUrl')
+                    <data:title/>
+            b:switch(var='data:blog.pageType')
+                <b:case value="index"/>
+                <b:case value="item"/>
+                    .hierarchy2
+                        <data:blog.pageName/>
+                <b:case value="static_page"/>
+                    .hierarchy2
+                        a(href='https://arakawa.bpriver.com/p/test2.html')
+                            <data:blog.pageName/>
+                <b:default/>
+                    <h1>工事中　もしくは　エラー</h1>
+                
