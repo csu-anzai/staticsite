@@ -1,0 +1,4 @@
+pug -w arakawa_root/index.pug
+pug -w software-development-online-community/index.pug
+
+styl -w global.styl

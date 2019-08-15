@@ -1,0 +1,48 @@
+extends template.pug
+block contents_header
+    b:includable#main
+        <b:include name='Breadcrumb'/>
+
+    b:includable#Breadcrumb
+        a.breadcrumb_parent(expr:href='data:blog.homepageUrl')
+            <data:title/>
+        a.breadcrumb_child(expr:href='data:blog.url')
+            <data:blog.pageName/>
+
+block contents_main
+    b:includable#main(var='top')
+        b:switch(var='data:blog.pageType').
+            <b:case value="index"/>
+                <b:include name='Menu'/>
+            <b:case value="item"/>
+                <b:loop values='data:posts' var='post'>
+                    <b:include name='Post' data='post'/>
+                </b:loop>
+            <b:case value="static_page"/>
+                <b:loop values='data:posts' var='post'>
+                    <b:include name='Post' data='post'/>
+                </b:loop>
+            <b:default/>
+                <h1 class="title">工事中　もしくは　エラー</h1>
+
+    b:includable#PostCollection( var='post')
+        a.bp-card(expr:href='data:post.url')
+            .bp-card-text
+                .bp-card-title.
+                    <data:post.title/>
+                .bp-card-details.
+                    <data:post.snippet/>
+                i.fas.fa-sync-alt.bp-card-icon
+                .bp-card-date. 
+                    <data:post.lastUpdatedISO8601/>
+            .bp-card-img.
+                <img expr:alt='data:post.title' expr:src='data:post.firstImageUrl' expr:title='data:post.title'/>
+        
+    b:includable#Post(var='obj')
+        <data:obj.body/>
+
+    b:includable#Menu(var='obj')
+        a(href='https://arakawa.bpriver.com/p/test2.html') #{sdoc_name}    
+
+block contents_script
+    include _library-script/slice-date.pug

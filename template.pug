@@ -1,7 +1,12 @@
+-
+    //-root・・・arakawa.bpriver.comブログのこと
+    var root_homepageurl="https://arakawa.bpriver.com/"
+    //-sdoc・・・software-development-online-community.bpriver.comブログのこと
+    var sdoc_name = "ソフトウェア開発オンラインコミュニティ"
+
 doctype xml
 doctype html
-html(b:version='2' class='v2' expr:dir='data:blog.languageDirection' expr:lang='data:blog.locale' xmlns='http://www.w3.org/1999/xhtml'
-  xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr')
+html(b:version='2' class='v2' expr:dir='data:blog.languageDirection' expr:lang='data:blog.locale' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr')
     head
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title><data:blog.pageTitle /></title>
@@ -9,6 +14,16 @@ html(b:version='2' class='v2' expr:dir='data:blog.languageDirection' expr:lang='
         <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:100,300,400,500,700,900" rel="stylesheet"/> 
         <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet"/>
         style
-            include global.css
+            include index.css
     body(expr:class!='&quot;loading&quot; + data:blog.mobileClass')
-      block contents
+        
+        b:section#header.header
+            b:widget#Header1(type='Header' expr:title='data:blog.title')
+                block contents_header
+        
+        b:section#main.main(name='Main' showaddelement='no')
+            b:widget#Blog1(locked='true' title='ブログの投稿' type='Blog')
+                //item、static_pageはbloop必須
+                block contents_main
+        
+        block contents_script
