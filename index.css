@@ -12,15 +12,20 @@ a:hover {
   text-decoration: underline;
 }
 svg {
-  width: 100%;
   height: 100%;
+  margin: 0.5em;
 }
-.breadcrumb {
-  background-color: #00f;
+.icon-arrow-right {
+  width: 12px;
+}
+.logo-bpriver {
+  width: 150px;
 }
 .breadcrumb a {
-  display: inline-block;
-  height: 100px;
+  float: left;
+}
+.breadcrumb a:last-child {
+  float: none;
 }
 .topmenu {
   text-align: center;

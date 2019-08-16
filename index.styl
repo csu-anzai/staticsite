@@ -3,6 +3,9 @@ color_text_link=#003AFF
 color_text_plane=white
 topmenu_label_margin=4em
 topmenu_list_margin=topmenu_label_margin/2
+logo_bpriver_width=150px
+icon_arrow_right_width=12px
+//デバッグ用
 
 //共通設定
 body
@@ -16,16 +19,24 @@ a
     color color_text_link
     &:hover
         text-decoration underline
-svg
-    width 100%
-    height 100% //これがないと位置がおかしくなる
+svg //svgのサイズを調整ために、各ファイルのsvgタグ内にclass名をつけwidthを指定すること
+    //width 100%
+    height 100% 
+    margin 0.5em
+
 
 //個別設定
+.icon-arrow-right
+    width icon_arrow_right_width
+.logo-bpriver
+    width logo_bpriver_width
+
 .breadcrumb
-    background-color: blue
     a
-        display: inline-block
-        height 100px
+        float left
+        &:last-child
+            float none
+
 
 
 .topmenu

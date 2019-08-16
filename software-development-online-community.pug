@@ -1,6 +1,66 @@
 extends template.pug
 block contents_header
+    b:includable#main
+        b:switch(var='data:blog.pageType').
+            <b:case value="index"/>
+                <b:include name='OneBreadcrumb'/>
+            <b:case value="item"/>
+                <b:include name='TwoBreadcrumb'/>
+            <b:case value="static_page"/>
+                <b:include name='TwoBreadcrumb'/>
+            <b:default/>
+                <h1 class="title">工事中　もしくは　エラー</h1>        
+
+
+    b:includable#OneBreadcrumb
+        nav.breadcrumb
+            a(href=root_homepageurl)
+                include _library-svg/マテリアル-ロゴ_bpriver_プレーン.svg
+            a
+                include _library-svg/マテリアル-アイコン_arrow-right.svg
+            a(expr:href='data:blog.homepageUrl') #{sdoc_comunityname}
+
+
+    b:includable#TwoBreadcrumb
+        nav
+            p aaa
+
 
 block contents_main
+    b:includable#main(var='top')
+        b:switch(var='data:blog.pageType').
+            <b:case value="index"/>
+                <b:include name='Menu'/>
+            <b:case value="item"/>
+                <b:loop values='data:posts' var='post'>
+                    <b:include name='Post' data='post'/>
+                </b:loop>
+            <b:case value="static_page"/>
+                <b:loop values='data:posts' var='post'>
+                    <b:include name='Post' data='post'/>
+                </b:loop>
+            <b:default/>
+                <h1 class="title">工事中　もしくは　エラー</h1>
+       
+    b:includable#Post(var='obj')
+        <data:obj.body/>
+
+    b:includable#Menu(var='obj')
+        .topmenu
+            .label #{root_topmenu_label}
+            a(href=sdoc_homepageurl) #{sdoc_comunityname}
+            a(href=sdoc_homepageurl) #{sdoc_comunityname}
+            a(href=sdoc_homepageurl) #{sdoc_comunityname}
 
 block contents_script
+    include _library-script/slice-date.pug
+
+    //b:includable#TopBreadcrumb
+        .breadcrumb
+            a.parent(expr:href='data:blog.homepageUrl')
+                include _library-svg/マテリアル-ロゴ_bpriver_プレーン.svg
+             nav.breadcrumb
+            a.breadcrumb-root(expr:href='data:blog.homepageUrl')
+                include _library-svg/マテリアル-ロゴ_bpriver_プレーン.svg
+            a.child(expr:href='data:blog.url')
+                <data:blog.pageName/>

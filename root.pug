@@ -1,16 +1,11 @@
 extends template.pug
 block contents_header
     b:includable#main
-        <b:include name='Breadcrumb'/>
+        <b:include name='Logo'/>
 
-    b:includable#Breadcrumb
-        .breadcrumb
-            a.parent(expr:href='data:blog.homepageUrl')
-                //svg画像のinkscape内での座標の位置、左上が0,0にくるように修正する
-                include _library-svg/マテリアル-ロゴ_bpriver_プレーン.svg
-
-            a.child(expr:href='data:blog.url')
-                <data:blog.pageName/>
+    b:includable#Logo
+        .logo-bpriver
+            include _library-svg/マテリアル-ロゴ_bpriver_プレーン.svg
 
 block contents_main
     b:includable#main(var='top')
