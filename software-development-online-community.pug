@@ -1,29 +1,34 @@
 extends template.pug
 block contents_header
     b:includable#main
+        <b:include name='Breadcrumb'/>
         b:switch(var='data:blog.pageType').
             <b:case value="index"/>
-                <b:include name='OneBreadcrumb'/>
             <b:case value="item"/>
-                <b:include name='TwoBreadcrumb'/>
             <b:case value="static_page"/>
-                <b:include name='TwoBreadcrumb'/>
             <b:default/>
                 <h1 class="title">工事中　もしくは　エラー</h1>        
 
 
-    b:includable#OneBreadcrumb
+    b:includable#Breadcrumb
         nav.breadcrumb
-            a(href=root_homepageurl)
-                include _library-svg/マテリアル-ロゴ_bpriver_プレーン.svg
-            a
-                include _library-svg/マテリアル-アイコン_arrow-right.svg
-            a(expr:href='data:blog.homepageUrl') #{sdoc_comunityname}
+            <b:include name='FirstHalf'/>
+            b:if(cond='data:blog.pageType == "item" or data:blog.pageType == "static_page"')
+                <b:include name='LatterHalf'/>
 
+    b:includable#FirstHalf
+        a(href=root_homepageurl)
+            include _library-svg/マテリアル-ロゴ_bpriver_プレーン.svg
+        a
+            include _library-svg/マテリアル-アイコン_arrow-right.svg
+        a(expr:href='data:blog.homepageUrl') #{sdoc_comunityname}
+    
+    b:includable#LatterHalf
+        a
+            include _library-svg/マテリアル-アイコン_arrow-right.svg
+        a(expr:href='data:blog.url') 
+            <data:blog.pageName/>
 
-    b:includable#TwoBreadcrumb
-        nav
-            p aaa
 
 
 block contents_main
