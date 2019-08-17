@@ -2,13 +2,6 @@ extends template.pug
 block contents_header
     b:includable#main
         <b:include name='Breadcrumb'/>
-        b:switch(var='data:blog.pageType').
-            <b:case value="index"/>
-            <b:case value="item"/>
-            <b:case value="static_page"/>
-            <b:default/>
-                <h1 class="title">工事中　もしくは　エラー</h1>        
-
 
     b:includable#Breadcrumb
         nav.breadcrumb
