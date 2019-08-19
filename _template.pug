@@ -1,0 +1,95 @@
+-
+    //-link
+    var link_googlesite="https://sites.google.com/a/bpriver.com/contents/"
+    var link_logo_bpriver=link_googlesite + "logo/マテリアル-ロゴ_bpriver_プレーン.svg"
+    //-index・・・トップページのこと
+    var index_title="bpriver"
+    var index_url="index.html"
+    var index_firstword="次の未来をデザインする"
+
+    //-sdoc・・・software-development-online-community配下のこと
+    var sdoc_title = "Software Development Online Community @" + index_title
+    var sdoc_url = "sdoc.html"
+    var sdoc_projectname = "ソフトウェア開発オンラインコミュニティ"
+    var sdoc_firstword="さあ、はじめよう！"
+    var sdoc_menu_vision_label="見据えるビジョン"
+    var sdoc_menu_vision_1_name="オープンで自由なコミュニティ 民間で支えるインフラ"
+    var sdoc_menu_vision_1_url="sdoc_1.html"
+    var sdoc_menu_vision_2_name="gオープンで自由なコミュニティ 民間で支えるインフラ"
+    var sdoc_menu_vision_2_url="sdoc.htmlp/test.html"
+    var sdoc_menu_document_label="正しいロジックツリーをあなたに下ろします"//洗練された資料　ロジックツリー
+    var sdoc_menu_document_1_name="IT業界について"
+    var sdoc_menu_document_1_url="sdoc.htmlp/blog-page.html"
+    var sdoc_menu_document_2_name="IT業界について"
+    var sdoc_menu_document_2_url="sdoc.htmlp/blog-page.html"
+
+    //-dummy
+    var dummy_title = "Dummy Page"
+    var dummy_url = "dummy.html"
+    var dummy_projectname = "dummyプロジェクト"
+
+    //-list
+    var index_list_menu=[
+        {   
+            url:sdoc_url,
+            name:sdoc_projectname,
+        },{
+            url:dummy_url,
+            name:dummy_projectname,
+        },
+    ]
+    var sdoc_list_menu_vision=[
+        {
+            url:sdoc_menu_vision_1_url,
+            name:sdoc_menu_vision_1_name,
+        },{
+            url:sdoc_menu_vision_2_url,
+            name:sdoc_menu_vision_2_name,
+        }
+    ]
+    var sdoc_list_menu_document=[
+        {
+            url:sdoc_menu_document_1_url,
+            name:sdoc_menu_document_1_name,
+        },{
+            url:sdoc_menu_document_2_url,
+            name:sdoc_menu_document_2_name,
+        }
+    ]
+
+//-分岐用変数
+block variable 
+    -   
+        var if_firstword=""
+        var if_label_1=""
+        var if_list_1=""
+        var if_label_2=""
+        var if_list_2=""
+
+doctype html
+html(lang="ja")
+    head
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        title #{index_title}
+        link(href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:100,300,400,500,700,900" rel="stylesheet")
+        style
+            include index.css
+    body
+        header
+            nav.breadcrumb
+                a.logo-bpriver(href=index_url)
+                block Breadcrumb         
+        main
+            unless if_firstword==""
+                .topmenu
+                    .firstword #{if_firstword}
+                    unless if_label_1==""
+                        .label #{if_label_1}
+                    unless if_list_1==""
+                        each i, index in if_list_1
+                            a(href=i.url) #{i.name}
+                    unless if_label_2==""
+                        .label #{if_label_2}
+                    unless if_list_2==""
+                  
+        block Script

@@ -1,0 +1,9 @@
+pug -w index.pug
+pug -w sdoc.pug
+pug -w sdoc_1.pug
+pug -w dummy.pug
+stylus -w index.styl
+
+pug index.pug
+pug sdoc.pug
+stylus index.styl

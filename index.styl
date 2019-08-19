@@ -3,8 +3,11 @@ color_text_link=#003AFF
 color_text_plane=white
 topmenu_firstword_margin=4em
 topmenu_list_margin=topmenu_firstword_margin/2
-logo_bpriver_width=150px
-icon_arrow_right_width=12px
+logo_bpriver_width=7em
+logo_bpriver_height=logo_bpriver_width*0.4
+breadcrumb_font_size=1.5em
+icon_arrow_right_width=0.6em
+icon_arrow_right_height=icon_arrow_right_width*3
 //デバッグ用
 
 //共通設定
@@ -19,22 +22,33 @@ a
     color color_text_link
     &:hover
         text-decoration underline
-svg //svgのサイズを調整ために、各ファイルのsvgタグ内にclass名をつけwidthを指定すること
-    //width 100%
-    height 100% 
-    margin 0.5em
-
 
 //個別設定
-.icon-arrow-right
-    width icon_arrow_right_width
 .logo-bpriver
+    content ""
     width logo_bpriver_width
+    height logo_bpriver_height
+    background-image url("_library-svg/マテリアル-ロゴ_bpriver_プレーン.svg")
+    background-size contain
+    background-repeat no-repeat
+    vertical-align middle
 
 .breadcrumb
     display flex
     align-items center
-    font-size: 1.5em
+    font-size breadcrumb_font_size
+    a:before
+        content ""
+        display: inline-block
+        width icon_arrow_right_width
+        height icon_arrow_right_height
+        background-image url("_library-svg/マテリアル-アイコン_arrow-right.svg")
+        background-size contain
+        background-repeat no-repeat
+        vertical-align middle
+        margin-right 0.7em
+    a:first-child:before
+        content none
     .text
         padding-bottom: 0.35em//高さを中心に合わせるため
         margin-left: 0.3em
