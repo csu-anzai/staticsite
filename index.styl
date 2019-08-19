@@ -1,8 +1,8 @@
 color_background=#03a9f4
 color_text_link=#003AFF
 color_text_plane=white
-topmenu_label_margin=4em
-topmenu_list_margin=topmenu_label_margin/2
+topmenu_firstword_margin=4em
+topmenu_list_margin=topmenu_firstword_margin/2
 logo_bpriver_width=150px
 icon_arrow_right_width=12px
 //デバッグ用
@@ -32,17 +32,28 @@ svg //svgのサイズを調整ために、各ファイルのsvgタグ内にclass
     width logo_bpriver_width
 
 .breadcrumb
-    a
-        float left
-        &:last-child
-            float none
+    display flex
+    align-items center
+    font-size: 1.5em
+    .text
+        padding-bottom: 0.35em//高さを中心に合わせるため
+        margin-left: 0.3em
+        margin-right: 0.3em
+//スマホ用に横スクロールできるようにする
+//PCはスクロール無しで、文字を折り返す方が見やすい
+    //white-space: nowrap//文字の自動改行禁止
+    //overflow-x scroll//横スクロール可能
+    //overflow-y hidden//縦スクロール禁止
+    //-ms-overflow-style:none//スクロールは可能だがスクロールバーを非表示に。Edge用の記述。
+    //&::-webkit-scrollbar
+        //display:none//スクロールは可能だがスクロールバーを非表示に。webkit用の記述。
 
 
 
 .topmenu
     text-align: center
-    .label
-        margin topmenu_label_margin
+    .firstword
+        margin topmenu_firstword_margin
         font-size x-large
     a
         display: block

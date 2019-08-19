@@ -14,12 +14,12 @@ block contents_header
             include _library-svg/マテリアル-ロゴ_bpriver_プレーン.svg
         a
             include _library-svg/マテリアル-アイコン_arrow-right.svg
-        a(expr:href='data:blog.homepageUrl') #{sdoc_comunityname}
+        a.text(expr:href='data:blog.homepageUrl') #{sdoc_comunityname}
     
     b:includable#LatterHalf
         a
             include _library-svg/マテリアル-アイコン_arrow-right.svg
-        a(expr:href='data:blog.url') 
+        a.text(expr:href='data:blog.url') 
             <data:blog.pageName/>
 
 
@@ -45,10 +45,13 @@ block contents_main
 
     b:includable#Menu(var='obj')
         .topmenu
-            .label #{root_topmenu_label}
-            a(href=sdoc_homepageurl) #{sdoc_comunityname}
-            a(href=sdoc_homepageurl) #{sdoc_comunityname}
-            a(href=sdoc_homepageurl) #{sdoc_comunityname}
+            .firstword #{sdoc_firstword}
+            .label #{sdoc_menu_vision_label}
+                a(href=sdoc_menu_vision_1_url) #{sdoc_menu_vision_1_name}
+                a(href=sdoc_menu_vision_2_url) #{sdoc_menu_vision_2_name}
+            .label #{sdoc_menu_document_label}
+                a(href=sdoc_menu_document_1_url) #{sdoc_menu_document_1_name}
+                a(href=sdoc_menu_document_2_url) #{sdoc_menu_document_2_name}
 
 block contents_script
     include _library-script/slice-date.pug
