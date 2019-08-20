@@ -3,7 +3,7 @@ git push origin master
 git push public development-staticsite
 git push public master
 git remote -v
-
+https://arakawashinji.github.io/homepage/. 
 
 
 pug -w index.pug
