@@ -13,10 +13,16 @@ https://arakawashinji.github.io/homepage/.
 
 parcel build index.pug -d docs --public-url ./
 　⇒urlを相対パスにするための記述「--public-url ./」。デフォルトでは絶対パスになっている。
+parcel build index.pug astah/*.html astah/*.css astah/*.png -d docs --public-url ./
+
+
 
 parcelのHMR（オートリロード機能）はcssとjsに対応している。htmlはエントリーポイントの1ファイルのみ有効。っぽい。SPAなら問題なさそう
 parcel index.pug
 parcel sdoc.pug
+
+parcel は複数のindex.htmlが存在すると動かない。ネスト位置が違っても。
+parcel index.pug astah/*.html astah/*.css astah/*.png
 
 pug -w index.pug
 pug -w sdoc.pug
