@@ -1,10 +1,9 @@
 extends _template.pug
-block variable
+block append variable
     -
-        if_firstword=sdoc_firstword
-        if_label_1=sdoc_menu_vision_label
-        if_label_2=sdoc_menu_document_label
-        if_list_1=sdoc_list_menu_vision
-        if_list_2=sdoc_list_menu_document
+        title=sdoc_title
+        firstword=sdoc_firstword
+        topmenu=sdoc_topmenu
+
 block append Breadcrumb
     a.text(href=sdoc_url) #{sdoc_projectname}

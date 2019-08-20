@@ -1,3 +1,6 @@
+自動リロード
+github pagesにホスト
+
 pug -w index.pug
 pug -w sdoc.pug
 pug -w sdoc_1.pug
