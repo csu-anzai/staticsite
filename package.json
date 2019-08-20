@@ -3,5 +3,8 @@
     "cssnano": "^4.1.10",
     "pug": "^2.0.4",
     "stylus": "^0.54.5"
+  },
+  "dependencies": {
+    "asap": "^2.0.6"
   }
 }
