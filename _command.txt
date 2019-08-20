@@ -22,7 +22,7 @@ parcel src/index.pug src/sdoc.pug
 //このやり方だとどのpugファイルもオートリロードされない
 parcel src/*.pug
 
-parcel build index.pug -d public --public-url ./
+parcel build index.pug -d docs --public-url ./
 　⇒urlを相対パスにするための記述「--public-url ./」。デフォルトでは絶対パスになっている。
 
 Windows版でのVisualStudioCodeでのコード整形のショートカットキー。
