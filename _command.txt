@@ -5,6 +5,8 @@ git push public master
 git remote -v
 https://arakawashinji.github.io/homepage/. 
 
+parcel build index.pug -d docs --public-url ./
+　⇒urlを相対パスにするための記述「--public-url ./」。デフォルトでは絶対パスになっている。
 
 pug -w index.pug
 pug -w sdoc.pug
@@ -26,8 +28,7 @@ parcel src/index.pug src/sdoc.pug
 //このやり方だとどのpugファイルもオートリロードされない
 parcel src/*.pug
 
-parcel build index.pug -d docs --public-url ./
-　⇒urlを相対パスにするための記述「--public-url ./」。デフォルトでは絶対パスになっている。
+
 
 Windows版でのVisualStudioCodeでのコード整形のショートカットキー。
 Shift + alt + f
