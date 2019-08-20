@@ -1,0 +1,42 @@
+github pagesにホスト
+
+git push origin development-staticsite
+
+pug -w index.pug
+pug -w sdoc.pug
+pug -w sdoc_1.pug
+pug -w dummy.pug
+stylus -w index.styl
+
+pug index.pug
+pug sdoc.pug
+stylus index.styl
+
+parcelのHMR（オートリロード機能）はcssとjsに対応している。htmlはエントリーポイントの1ファイルのみ有効。っぽい。SPAなら問題なさそう
+parcel src/index.pug
+parcel src/sdoc.pug
+parcel src/index.pug src/sdoc.pug
+
+// parcel ./src/index.html とした場合は http://localhost:1234/ でページが表示されますが、 parcel ./src/*.html と
+//ワイルドカードを使った場合は http://localhost:1234/index.html と明示的にファイル名を指定しなければページは表示されません。
+//このやり方だとどのpugファイルもオートリロードされない
+parcel src/*.pug
+
+parcel build index.pug -d docs --public-url ./
+　⇒urlを相対パスにするための記述「--public-url ./」。デフォルトでは絶対パスになっている。
+
+Windows版でのVisualStudioCodeでのコード整形のショートカットキー。
+Shift + alt + f
+
+memo　parcel pug stylus 環境について
+//できること
+リンク先指定　リンク先のファイル名の指定など、「xxx.pug」、「yyy.styl」でOK。distフォルダに、それらが自動でコンパイルされ、「xxx.html」、「yyy.css」が出力される。
+
+参考　http://simoothie-cafe.hatenablog.com/entry/2018/05/06/120222
+ブラウザ自動リロード　1つのエントリポイントの指定だと：「parcel index.pug」、そのファイルに影響を及ぼすファイルの更新にしかブラウザの自動リロードが反映されない。
+                        index.pugのcssの設定を変更すると自動で変更が反映されるが。sdoc.pugなどを変更しても、sdoc.htmlのページが自動リロードされない。
+                            ⇒複数のエントリポイントの指定方法。「parcel *.pug」「parcel src/*.pug」「parcel src/index.pug src/sdoc.pug」
+                            　⇒_layout.pugといったファイルを除外する書き方は以下のようになります「parcel 'src/**/!(_)*.pug'」
+
+//エラー系
+pugにて　このコメント「//」だとエラー。「//-」にする必要あり。

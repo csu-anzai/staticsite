@@ -1,4 +1,0 @@
-pug -w root.pug
-pug -w software-development-online-community.pug
-
-styl -w index.styl

@@ -1,0 +1,9 @@
+extends _template.pug
+block append variable
+    -
+        title=sdoc_title
+        firstword=sdoc_firstword
+        topmenu=sdoc_topmenu
+
+block append Breadcrumb
+    a.text(href=sdoc_url) #{sdoc_projectname} 
