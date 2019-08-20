@@ -1,5 +1,7 @@
 github pagesにホスト
 
+git push origin development-staticsite
+
 pug -w index.pug
 pug -w sdoc.pug
 pug -w sdoc_1.pug
