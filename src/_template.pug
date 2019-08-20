@@ -1,37 +1,37 @@
 -
     //-index・・・トップページ
     var index_title="bpriver"
-    var index_url="index.html"
+    var index_url="index.pug"
     var index_firstword="次の未来をデザインする"
 
     //-sdoc・・・software-development-online-community
     var sdoc_title = "Software Development Online Community @" + index_title
-    var sdoc_url = "sdoc.html"
+    var sdoc_url = "sdoc.pug"
     var sdoc_projectname = "ソフトウェア開発オンラインコミュニティ"
     var sdoc_firstword="さあ、はじめよう！"
     var sdoc_topmenu=[{
         label:"見据えるビジョン",
         list:[{
-            url:"sdoc_1.html",
+            url:"sdoc_1.pug",
             name:"オープンで自由なコミュニティ 民間で支えるインフラ"
         },{
-            url:"sdoc.htmlp/test.html",
+            url:"sdoc.pug",
             name:"gオープンで自由なコミュニティ 民間で支えるインフラ",
         }],
     },{
         label:"正しいロジックツリーをあなたに下ろします",//洗練された資料　ロジックツリー
         list:[{
-            url:"sdoc.htmlp/blog-page.html",
+            url:"sdoc.pug",
             name:"IT業界について",
         },{
-            url:"sdoc.htmlp/blog-page.html",
+            url:"sdoc.pug",
             name:"IT業界について",
         }],
     }]
 
     //-dummy
     var dummy_title = "Dummy Page"
-    var dummy_url = "dummy.html"
+    var dummy_url = "dummy.pug"
     var dummy_projectname = "dummyプロジェクト"
 
     //- project link list
@@ -61,23 +61,23 @@ html(lang="ja")
         meta(name="viewport" content="width=device-width, initial-scale=1")
         title #{title}
         link(href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:100,300,400,500,700,900" rel="stylesheet")
-        style
-            include index.css
+        link(rel="stylesheet",href="index.styl")
     body
         header
             nav.breadcrumb
                 a.logo-bpriver(href=index_url)
                 block Breadcrumb         
         main
-            unless firstword==""
-                .topmenu
-                    .firstword #{firstword}
-                    if index==""
-                        each menu in topmenu
-                            .label #{menu.label}
-                            each i in menu.list
+            block Main
+                unless firstword==""
+                    .topmenu
+                        .firstword #{firstword}
+                        if index==""
+                            each menu in topmenu
+                                .label #{menu.label}
+                                each i in menu.list
+                                    a(href=i.url) #{i.name}
+                        else
+                            each i in index
                                 a(href=i.url) #{i.name}
-                    else
-                        each i in index
-                            a(href=i.url) #{i.name}
         block Script
