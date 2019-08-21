@@ -9,14 +9,12 @@ parcelのコンパイルは、「（」「）」「全角」「半角 」らで�
 
 git push origin development-staticsite
 git push origin master
-git push public development-staticsite
-git push public master
 git remote -v
-https://arakawashinji.github.io/homepage/. 
+https://arakawashinji.github.io/site/.
 
 parcel build index.pug -d docs --public-url ./
 　⇒urlを相対パスにするための記述「--public-url ./」。デフォルトでは絶対パスになっている。
-parcel build index.pug astah/* astah/*/* astah/*/*/* astah/*/*/*/* -d docs --public-url ./
+parcel build index.pug astah/* astah/*/* astah/*/*/* astah/*/*/*/* -d public --public-url ./
 
 
 
@@ -26,17 +24,25 @@ parcel sdoc.pug
 
 parcel index.pug astah/* astah/*/* astah/*/*/* astah/*/*/*/*
 
-pug -w index.pug
-pug -w sdoc.pug
-pug -w sdoc_1.pug
-pug -w dummy.pug
-stylus -w index.styl
 
-pug index.pug
-pug sdoc.pug
-stylus index.styl
+git add .
+git status
+git commit -m "first commit"
+git log
+git remote add origin https://github.com/arakawashinji/site.git
+git remote -v 
+git remote rm origin
+git remote set-url origin [変更先のURL]
+git remote rename [変更前リポジトリ名] [変更後リポジトリ名]
 
 
+cd public
+git add .
+git status
+
+git commit -m "message"
+git push origin master
+cd ../
 
 // parcel ./src/index.html とした場合は http://localhost:1234/ でページが表示されますが、 parcel ./src/*.html と
 //ワイルドカードを使った場合は http://localhost:1234/index.html と明示的にファイル名を指定しなければページは表示されません。
