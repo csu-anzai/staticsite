@@ -34,7 +34,8 @@ git remote -v
 git remote rm origin
 git remote set-url origin [変更先のURL]
 git remote rename [変更前リポジトリ名] [変更後リポジトリ名]
-
+git checkout master
+git merge development-staticsite
 
 cd public
 git add .
