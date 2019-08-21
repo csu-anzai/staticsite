@@ -4,13 +4,9 @@ https化
 添付ファイルダウンロードできるようにする方法
 説明図を表示できるようにし、実際に見れる形にする
 parcelのコンパイルは、「（」「）」「全角」「半角 」らでエラー発生っぽい。「半角」でファイル名が途中で途切れてエラーは確認。 Data must be a string or a buffer
+https://arakawashinji.github.io/staticsite/
 
 
-
-git push origin development-staticsite
-git push origin master
-git remote -v
-https://arakawashinji.github.io/site/.
 
 parcel build index.pug -d docs --public-url ./
 　⇒urlを相対パスにするための記述「--public-url ./」。デフォルトでは絶対パスになっている。
@@ -29,13 +25,18 @@ git add .
 git status
 git commit -m "first commit"
 git log
-git remote add origin https://github.com/arakawashinji/site.git
+git remote add origin https://github.com/arakawashinji/staticsite.git
 git remote -v 
 git remote rm origin
-git remote set-url origin [変更先のURL]
+git remote set-url origin https://github.com/arakawashinji/staticsite.git
 git remote rename [変更前リポジトリ名] [変更後リポジトリ名]
+git rm [削除したいファイル名]
+git rm -r [削除したいフォルダ名]
 git checkout master
+git checkout development-staticsite
 git merge development-staticsite
+git push origin master
+git push origin development-staticsite
 
 cd public
 git add .
