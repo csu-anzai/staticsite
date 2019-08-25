@@ -10,7 +10,7 @@ HTMLへの矢印消す
 ハイパーリンク先があるやつとないやつがあることの説明
 
 parcel index.pug astah/* astah/*/* astah/*/*/* astah/*/*/*/*
-parcel build index.pug astah/* astah/*/* astah/*/*/* astah/*/*/*/* -d public --public-url ./
+parcel build index.pug CNAME astah/* astah/*/* astah/*/*/* astah/*/*/*/* -d public --public-url ./
 　⇒urlを相対パスにするための記述「--public-url ./」。デフォルトでは絶対パスになっている。
 
 
