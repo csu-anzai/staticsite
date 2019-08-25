@@ -9,12 +9,9 @@ https://arakawashinji.github.io/staticsite/
 HTMLへの矢印消す
 ハイパーリンク先があるやつとないやつがあることの説明
 
-
-
-parcel build index.pug -d docs --public-url ./
-　⇒urlを相対パスにするための記述「--public-url ./」。デフォルトでは絶対パスになっている。
+parcel index.pug astah/* astah/*/* astah/*/*/* astah/*/*/*/*
 parcel build index.pug astah/* astah/*/* astah/*/*/* astah/*/*/*/* -d public --public-url ./
-
+　⇒urlを相対パスにするための記述「--public-url ./」。デフォルトでは絶対パスになっている。
 
 
 parcelのHMR（オートリロード機能）はcssとjsに対応している。htmlはエントリーポイントの1ファイルのみ有効。っぽい。SPAなら問題なさそう
@@ -22,7 +19,6 @@ parcel index.pug
 parcel sdoc.pug
 parcel sdoc_logictree.pug
 
-parcel index.pug astah/* astah/*/* astah/*/*/* astah/*/*/*/*
 
 
 git add .
@@ -39,9 +35,11 @@ git rm -r [削除したいフォルダ名]
 git checkout master
 git checkout development-staticsite
 git merge development-staticsite
+git clone [cloneしたいurl]
 git push origin master
 git push origin development-staticsite
 
+parcel build index.pug astah/* astah/*/* astah/*/*/* astah/*/*/*/* -d public --public-url ./
 cd public
 git add .
 git status
