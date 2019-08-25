@@ -6,4 +6,11 @@ block append variable
         topmenu=sdoc_topmenu
 
 block append Breadcrumb
-    a.text(href=sdoc_url) #{sdoc_projectname} 
+    a.text(href=sdoc_url) #{sdoc_pagename} 
+
+block append Main
+    h3 #{sdoc_logictree_name} の見方
+    img(src="マニュアル_astahのhtmlドキュメントの見方_1.jpg")
+    img(src="マニュアル_astahのhtmlドキュメントの見方_2.jpg")
+    img(src="マニュアル_astahのhtmlドキュメントの見方_3.jpg")
+    img(src="マニュアル_astahのhtmlドキュメントの見方_4.jpg")

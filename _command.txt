@@ -5,6 +5,9 @@ https化
 説明図を表示できるようにし、実際に見れる形にする
 parcelのコンパイルは、「（」「）」「全角」「半角 」らでエラー発生っぽい。「半角」でファイル名が途中で途切れてエラーは確認。 Data must be a string or a buffer
 https://arakawashinji.github.io/staticsite/
+汎化の矢印の説明
+HTMLへの矢印消す
+ハイパーリンク先があるやつとないやつがあることの説明
 
 
 
@@ -17,6 +20,7 @@ parcel build index.pug astah/* astah/*/* astah/*/*/* astah/*/*/*/* -d public --p
 parcelのHMR（オートリロード機能）はcssとjsに対応している。htmlはエントリーポイントの1ファイルのみ有効。っぽい。SPAなら問題なさそう
 parcel index.pug
 parcel sdoc.pug
+parcel sdoc_logictree.pug
 
 parcel index.pug astah/* astah/*/* astah/*/*/* astah/*/*/*/*
 

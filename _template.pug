@@ -7,48 +7,36 @@
     //-sdoc・・・software-development-online-community
     var sdoc_title = "Software Development Online Community @" + index_title
     var sdoc_url = "sdoc.pug"
-    var sdoc_projectname = "ソフトウェア開発オンラインコミュニティ"
+    var sdoc_pagename = "ソフトウェア開発オンラインコミュニティ（仮）"
     var sdoc_firstword="さあ、はじめよう！"
-    var sdoc_topmenu=[{
-        label:"ビジョン",
-        list:[{
-            url:"sdoc_1.pug",
-            name:"オープンで自由なコミュニティ 民間で支えるインフラ"
-        },{
-            url:"sdoc.pug",
-            name:"gオープンで自由なコミュニティ 民間で支えるインフラ",
-        }],
-    },{
-        label:"ロジックツリー",//洗練された資料　ロジックツリー
-        list:[{
-            url:"astah/index.html",
-            name:"IT",
-        },{
-            url:"sdoc.pug",
-            name:"IT業界について",
-        }],
-    }]
+    var sdoc_logictree_url="astah/index.html"
+    var sdoc_logictree_name="IT分野の全体を把握するためのツリー図"
+
 
     //-dummy
     var dummy_title = "Dummy Page"
     var dummy_url = "dummy.pug"
     var dummy_projectname = "dummyプロジェクト"
 
-    //- project link list
-    var list_project=[
+    //-topmenu
+    var index_topmenu=[
         {   
             url:sdoc_url,
-            name:sdoc_projectname,
+            name:sdoc_pagename,
         },
     ]
-
+    var sdoc_topmenu=[
+        {
+            url:sdoc_logictree_url,
+            name:sdoc_logictree_name,
+        }
+    ]
 
 //-※各ファイルではblock appendで定義すること。blockだけだどundifindになる。
 block variable 
     -   
         var title=""
         var firstword=""
-        var index=""
         var topmenu=""
         
 
@@ -66,15 +54,8 @@ html(lang="ja")
                 block Breadcrumb         
         main
             block Main
-                unless firstword==""
-                    .topmenu
-                        .firstword #{firstword}
-                        if index==""
-                            each menu in topmenu
-                                .label #{menu.label}
-                                each i in menu.list
-                                    a(href=i.url) #{i.name}
-                        else
-                            each i in index
-                                a(href=i.url) #{i.name}
+                .topmenu
+                    .firstword #{firstword}
+                    each i in topmenu
+                        a(href=i.url) #{i.name}
         block Script
