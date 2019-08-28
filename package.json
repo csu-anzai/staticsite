@@ -8,14 +8,12 @@
     "asap": "^2.0.6"
   },
   "scripts": {
-    "ready":"git add . & git status",
-    "go:pro":"git commit -m 'ok' & git push origin master & npm run cd:dev",
-    "cd:dev":"cd ../homepage-source",
-    "cd:pro":"cd ../homepage-public",
     "clean:dev":"rm -r ../homepage-source/dist/*",
-    "clean:pro":"rm ../homepage-public/docs/*.* & rm -r ../homepage-public/docs/astah",
-    "bundle:dev":       "parcel index.pug astah/*.* astah/*/*.* astah/*/*/*.* astah/*/*/*/*.*",
-    "bundle:pro": "parcel build index.pug astah/*.* astah/*/*.* astah/*/*/*.* astah/*/*/*/*.* -d ../homepage-public/docs --public-url ./",
+    "clean:pro":"rm ../homepage-source/*.* & rm -r ../homepage-source/astah",
+    "git:ready":"git add . & git status",
+    "git:go":"git commit -m 'ok' & git checkout master & git merge development-staticsite & git push origin master & git push origin development-staticsite & git checkout development-staticsite",
+    "bundle:dev": "parcel index.pug astah/*.* astah/*/*.* astah/*/*/*.* astah/*/*/*/*.*",
+    "bundle:pro": "parcel build index.pug astah/*.* astah/*/*.* astah/*/*/*.* astah/*/*/*/*.* -d ../homepage-public --public-url ./",
     "test": "npm run clean:dev & npm run bundle:dev",
     "build": "npm run clean:pro & npm run bundle:pro & npm run cd:pro & npm run ready"
 

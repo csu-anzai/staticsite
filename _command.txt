@@ -2,7 +2,7 @@ bashでバンドル時の事前削除など、自動化する
 parcelのバンドルにおいて、「半角」でファイル名が途中で途切れてエラーは確認。 Data must be a string or a buffer
 https://bpriver.com
 
-拡張子の無いファイル（pakage-list、CNAME）をワイルドカードで避ける方法
+拡張子の無いファイル（pakage-list、CNAME等）をワイルドカードで避ける方法
 *.*
 　⇒これで、拡張子のあるファイルだけを指定できる。
 
@@ -11,11 +11,6 @@ https://bpriver.com
 parcel "index.pug" "astah/[^package-list]*" "astah/*/*"　"astah/*/*/*"　"astah/*/*/*/*"
 parcel index.pug "astah/[^package-list]*" "astah/*/*"　"astah/*/*/*"　"astah/*/*/*/*"
 parcel index.pug astah/* astah/*/* astah/*/*/* astah/*/*/*/*
-
-npm-scripts
-https://ics.media/entry/12226/
-https://qiita.com/minase_tetsuya/items/986feac7150ed74e13d8
-https://qiita.com/liply/items/cccc6a7b703c1d3ab04f
 
 parcel index.pug astah/[^package-list]* astah/*/* astah/*/*/* astah/*/*/*/*
 parcel index.pug astah/* astah/*/* astah/*/*/* astah/*/*/*/*
