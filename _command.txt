@@ -1,25 +1,33 @@
-https化
-独自ドメイン設定
-リダイレクト設定
-添付ファイルダウンロードできるようにする方法
-説明図を表示できるようにし、実際に見れる形にする
-parcelのコンパイルは、「（」「）」「全角」「半角 」らでエラー発生っぽい。「半角」でファイル名が途中で途切れてエラーは確認。 Data must be a string or a buffer
-https://arakawashinji.github.io/staticsite/
-汎化の矢印の説明
-HTMLへの矢印消す
-ハイパーリンク先があるやつとないやつがあることの説明
+bashでバンドル時の事前削除など、自動化する
+parcelのバンドルにおいて、「半角」でファイル名が途中で途切れてエラーは確認。 Data must be a string or a buffer
+https://bpriver.com
 
+拡張子の無いファイル（pakage-list、CNAME）をワイルドカードで避ける方法
+*.*
+　⇒これで、拡張子のあるファイルだけを指定できる。
+
+
+//ダブルクォーテーションでくくることで、引数多すぎエラーを回避できる
+parcel "index.pug" "astah/[^package-list]*" "astah/*/*"　"astah/*/*/*"　"astah/*/*/*/*"
+parcel index.pug "astah/[^package-list]*" "astah/*/*"　"astah/*/*/*"　"astah/*/*/*/*"
 parcel index.pug astah/* astah/*/* astah/*/*/* astah/*/*/*/*
-parcel build index.pug CNAME astah/* astah/*/* astah/*/*/* astah/*/*/*/* -d public --public-url ./
+
+npm-scripts
+https://ics.media/entry/12226/
+https://qiita.com/minase_tetsuya/items/986feac7150ed74e13d8
+https://qiita.com/liply/items/cccc6a7b703c1d3ab04f
+
+parcel index.pug astah/[^package-list]* astah/*/* astah/*/*/* astah/*/*/*/*
+parcel index.pug astah/* astah/*/* astah/*/*/* astah/*/*/*/*
+parcel build index.pug astah/* astah/*/* astah/*/*/* astah/*/*/*/* -d ../homepage-public/docs --public-url ./
 　⇒urlを相対パスにするための記述「--public-url ./」。デフォルトでは絶対パスになっている。
 
+cd ../homepage-source
+cd ../homepage-public
 
 parcelのHMR（オートリロード機能）はcssとjsに対応している。htmlはエントリーポイントの1ファイルのみ有効。っぽい。SPAなら問題なさそう
 parcel index.pug
 parcel sdoc.pug
-parcel sdoc_logictree.pug
-
-
 
 git add .
 git status
@@ -38,15 +46,9 @@ git merge development-staticsite
 git clone [cloneしたいurl]
 git push origin master
 git push origin development-staticsite
+//push を強制
+git push -f origin master
 
-parcel build index.pug astah/* astah/*/* astah/*/*/* astah/*/*/*/* -d public --public-url ./
-cd public
-git add .
-git status
-
-git commit -m "message"
-git push origin master
-cd ../
 
 // parcel ./src/index.html とした場合は http://localhost:1234/ でページが表示されますが、 parcel ./src/*.html と
 //ワイルドカードを使った場合は http://localhost:1234/index.html と明示的にファイル名を指定しなければページは表示されません。
