@@ -1,16 +1,11 @@
-bashでバンドル時の事前削除など、自動化する
-parcelのバンドルにおいて、「半角」でファイル名が途中で途切れてエラーは確認。 Data must be a string or a buffer
 https://bpriver.com
 
 拡張子の無いファイル（pakage-list、CNAME等）をワイルドカードで避ける方法
 *.*
 　⇒これで、拡張子のあるファイルだけを指定できる。
 
-
-//ダブルクォーテーションでくくることで、引数多すぎエラーを回避できる
-parcel "index.pug" "astah/[^package-list]*" "astah/*/*"　"astah/*/*/*"　"astah/*/*/*/*"
-parcel index.pug "astah/[^package-list]*" "astah/*/*"　"astah/*/*/*"　"astah/*/*/*/*"
-parcel index.pug astah/* astah/*/* astah/*/*/* astah/*/*/*/*
+parcelは拡張子の無いファイル（pakage-list、CNAME等）をバンドルすると末尾に「.」をつけて出力するので注意（pakage-list.、CNAME.等）
+parcelのバンドルにおいて、「半角」でファイル名が途中で途切れてエラーは確認。 Data must be a string or a buffer
 
 parcel index.pug astah/[^package-list]* astah/*/* astah/*/*/* astah/*/*/*/*
 parcel index.pug astah/* astah/*/* astah/*/*/* astah/*/*/*/*
