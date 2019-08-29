@@ -38,7 +38,9 @@ git push origin master
 git push origin development-staticsite
 //push を強制
 git push -f origin master
-
+//commitのコメントの変更
+git commit --amend -m "cssを修正"
+git rebase -i HEAD~3
 
 // parcel ./src/index.html とした場合は http://localhost:1234/ でページが表示されますが、 parcel ./src/*.html と
 //ワイルドカードを使った場合は http://localhost:1234/index.html と明示的にファイル名を指定しなければページは表示されません。
