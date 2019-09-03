@@ -12,7 +12,7 @@ parcel index.pug astah/* astah/*/* astah/*/*/* astah/*/*/*/*
 parcel build index.pug astah/* astah/*/* astah/*/*/* astah/*/*/*/* -d ../homepage-public/docs --public-url ./
 　⇒urlを相対パスにするための記述「--public-url ./」。デフォルトでは絶対パスになっている。
 
-cd ../homepage-source
+cd ../homepage
 cd ../homepage-public
 
 parcelのHMR（オートリロード機能）はcssとjsに対応している。htmlはエントリーポイントの1ファイルのみ有効。っぽい。SPAなら問題なさそう
